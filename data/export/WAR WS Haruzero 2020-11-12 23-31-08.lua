@@ -1,0 +1,17 @@
+sets.exported={
+    main="Mdomo Axe",
+    sub="Loxotic Mace",
+    ammo="Ginsen",
+    head="Sulevia's Mask +1",
+    body={ name="Argosy Hauberk", augments={'STR+10','DEX+10','Attack+15',}},
+    hands={ name="Argosy Mufflers", augments={'STR+15','"Dbl.Atk."+2','Haste+2%',}},
+    legs={ name="Argosy Breeches", augments={'STR+10','DEX+10','Attack+15',}},
+    feet="Pumm. Calligae +1",
+    neck="Asperity Necklace",
+    waist="Ioskeha Belt",
+    left_ear="Brutal Earring",
+    right_ear="Mache Earring",
+    left_ring="Petrov Ring",
+    right_ring="Rajas Ring",
+    back="Buquwik Cape",
+}

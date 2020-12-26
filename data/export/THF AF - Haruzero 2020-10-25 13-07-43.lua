@@ -1,0 +1,17 @@
+sets.exported={
+    main="Homestead Dagger",
+    sub="Eminent Dagger",
+    range="Wingcutter",
+    head="Rogue's Bonnet",
+    body="Rogue's Vest",
+    hands="Rogue's Armlets",
+    legs="Rogue's Culottes",
+    feet="Rogue's Poulaines",
+    neck="Justiciar's Torque",
+    waist="Windbuffet Belt",
+    left_ear="Mache Earring",
+    right_ear="Flock Earring",
+    left_ring="Mummu Ring",
+    right_ring="Enlivened Ring",
+    back="Kayapa Cape",
+}

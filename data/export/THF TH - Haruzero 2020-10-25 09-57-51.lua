@@ -1,0 +1,17 @@
+sets.exported={
+    main="Homestead Dagger",
+    sub="Thief's Knife",
+    range="Wingcutter",
+    head="Mummu Bonnet +1",
+    body="Mummu Jacket +1",
+    hands="Mummu Wrists +2",
+    legs="Mummu Kecks +1",
+    feet="Trotter Boots",
+    neck="Justiciar's Torque",
+    waist="Windbuffet Belt",
+    left_ear="Mache Earring",
+    right_ear="Flock Earring",
+    left_ring="Mummu Ring",
+    right_ring="Warp Ring",
+    back="Kayapa Cape",
+}

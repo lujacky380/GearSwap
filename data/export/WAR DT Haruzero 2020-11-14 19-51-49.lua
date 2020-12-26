@@ -1,0 +1,17 @@
+sets.exported={
+    main="Kaja Axe",
+    sub="Barbarity",
+    ammo="Staunch Tathlum",
+    head="Sulevia's Mask +1",
+    body="Sulevia's Plate. +1",
+    hands="Sulev. Gauntlets +1",
+    legs="Sulevi. Cuisses +1",
+    feet="Sulev. Leggings +1",
+    neck="Asperity Necklace",
+    waist="Flume Belt",
+    left_ear="Brutal Earring",
+    right_ear="Suppanomimi",
+    left_ring="Defending Ring",
+    right_ring="Gelatinous Ring +1",
+    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+}

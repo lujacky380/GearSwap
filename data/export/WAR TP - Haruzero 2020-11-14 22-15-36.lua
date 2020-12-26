@@ -1,0 +1,17 @@
+sets.exported={
+    main="Kaja Axe",
+    sub="Barbarity",
+    ammo="Ginsen",
+    head="Flam. Zucchetto +2",
+    body={ name="Valorous Mail", augments={'Attack+22','"Dbl.Atk."+5','STR+8','Accuracy+5',}},
+    hands={ name="Emicho Gauntlets", augments={'Accuracy+20','"Dual Wield"+5','Pet: Accuracy+20',}},
+    legs={ name="Odyssean Cuisses", augments={'Accuracy+22 Attack+22','"Store TP"+5','DEX+4','Accuracy+13',}},
+    feet="Flam. Gambieras +2",
+    neck="Warrior's Beads",
+    waist="Ioskeha Belt",
+    left_ear="Brutal Earring",
+    right_ear="Suppanomimi",
+    left_ring="Flamma Ring",
+    right_ring="Petrov Ring",
+    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+}

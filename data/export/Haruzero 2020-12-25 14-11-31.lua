@@ -1,0 +1,17 @@
+sets.exported={
+    main="Tauret",
+    sub="Blurred Knife +1",
+    ammo="Aurgelmir Orb",
+    head={ name="Herculean Helm", augments={'"Fast Cast"+6','Mag. Acc.+7','"Mag.Atk.Bns."+9',}},
+    body="Pillager's Vest +2",
+    hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
+    legs="Pill. Culottes +2",
+    feet={ name="Plun. Poulaines +3", augments={'Enhances "Assassin\'s Charge" effect',}},
+    neck={ name="Asn. Gorget +1", augments={'Path: A',}},
+    waist="Reiki Yotai",
+    left_ear="Sherida Earring",
+    right_ear="Telos Earring",
+    left_ring="Ilabrat Ring",
+    right_ring="Shneddick Ring",
+    back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}},
+}
