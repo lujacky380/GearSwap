@@ -28,8 +28,9 @@ function user_job_setup()
 	gear.odyssean_fc_body = {name="Odyss. Chestplate", augments={}}
 	
 	gear.valorous_ws_str_legs = {name="Valorous Hose", augments={'Accuracy+27','Weapon skill damage +3%','STR+12',}}
-	gear.valorous_ws_hands = {name="Valorous Mitts", augments={'Weapon skill damage +3%','AGI+14','Accuracy+26','Attack+12',}}
 	gear.valorous_ws_crit_feet ={ name="Valorous Greaves", augments={'Attack+28','Crit.hit rate+3','STR+13','Accuracy+8',}}
+	
+	gear.valorous_TH_hands = {name="Valorous Mitts", augments={'VIT+2','AGI+3','Treasure Hunter +1'}}
 	
 	--DW
 	-- gear.tp_hands = {name="Emicho Gauntlets +1"}

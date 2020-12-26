@@ -21,6 +21,10 @@ function user_job_setup()
 	gear.herculean_fc_head = { name="Herculean Helm", augments={'"Fast Cast"+6','Mag. Acc.+7','"Mag.Atk.Bns."+9',}}
 	gear.herculean_fc_feet = {name="Herculean Boots", augments={'Mag. Acc.+9','"Fast Cast"+5','STR+9','"Mag.Atk.Bns."+6',}}
 	gear.herculean_wsd_feet = {name="Herculean Boots", augments={'Weapon skill damage +3%','DEX+12','Accuracy+3',}}
+	
+	gear.herculean_nuke_head = { name="Herculean Helm", augments={'Weapon skill damage +2%','INT+12','Mag. Acc.+13',}}
+	gear.herculean_nuke_legs = { name="Herculean Trousers", augments={'"Mag.Atk.Bns."+23','Weapon skill damage +4%','MND+4',}}
+	gear.herculean_nuke_feet = { name="Herculean Boots", augments={'Weapon skill damage +2%','INT+11','"Mag.Atk.Bns."+3',}}
 
     -- Additional local binds
     send_command('bind ^` input /ja "Flee" <me>')
@@ -68,8 +72,8 @@ function init_gear_sets()
 	sets.weapons.EviscerationTH = {main="Tauret",sub="Sandung"}
 	sets.weapons.Aeneas = {main="Aeneas",sub="Tauret"}
 	sets.weapons.Savage = {main="Naegling",sub="Tauret"}
+	sets.weapons.MagicWeapons = {main="Taming Sari",sub="Malevolence"}
 	--sets.weapons.ProcWeapons = {main="Blurred Knife +1",sub="Atoyac"}
-	sets.weapons.MagicWeapons = {main="Malevolence",sub="Malevolence"}
 	--sets.weapons.Throwing = {main="Aeneas",sub="Shijo",range="Raider's Bmrng."}
 	--sets.weapons.SwordThrowing = {main="Naegling",sub="Shijo",range="Raider's Bmrng"}
 	--sets.weapons.Bow = {main="Aeneas",sub="Kustawi +1",range="Kaja Bow",ammo="Chapuli Arrow"}
@@ -234,8 +238,8 @@ function init_gear_sets()
 		
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS,{ammo="Seeth. Bomblet +1",
         head=gear.herculean_nuke_head,neck="Baetyl Pendant",ear1="Moonshade Earring",ear2="Friomisi Earring",
-        body="Samnuha Coat",hands="Leyline Gloves",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
-        back=gear.wsd_jse_back,waist="Chaac Belt",legs=gear.herculean_wsd_legs,feet=gear.herculean_nuke_feet})
+        body="Samnuha Coat",hands="Leyline Gloves",ring1="Shiva Ring",ring2="Shiva Ring",
+        back=gear.wsd_jse_back,waist="Eschan Stone",legs=gear.herculean_nuke_legs,feet=gear.herculean_nuke_feet})
 
     sets.precast.WS['Aeolian Edge'].TH = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
 
@@ -292,7 +296,7 @@ function init_gear_sets()
     sets.idle.Town = {range=empty,ammo="Aurgelmir Orb",
         head="Adhemar Bonnet +1",neck="Asn. Gorget +1",ear1="Sherida Earring",ear2="Telos Earring",
         body="Pillager's Vest +2",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Shneddick Ring",
-        back=gear.tp_jse_back,waist="Reiki Yotai",legs="Pillager's Culottes +2",feet="Plun. Poulaines +3"}
+        back=gear.tp_jse_back,waist="Reiki Yotai",legs="Samnuha Tights",feet="Plun. Poulaines +3"}
 
     sets.idle.Weak = set_combine(sets.idle, {})
 
