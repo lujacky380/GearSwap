@@ -79,7 +79,7 @@ function init_gear_sets()
        
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = {ammo="Aurgelmir Orb",
+	sets.precast.WS = {ammo="Knobkierrie",
         head="Ken. Jinpachi +1",neck="Fotia Gorget",left_ear="Sherida Earring",right_ear="Moonshade Earring",
         body="Ken. Samue +1",hands="Adhemar Wristbands +1",ring1="Ifrit Ring",ring2="Niqmaddu Ring",
         back=gear.ws_jse_back,waist="Moonbow Belt +1",legs="Hiza. Hizayoroi +2",feet="Ken. Sune-Ate +1"}
@@ -184,7 +184,7 @@ function init_gear_sets()
 	sets.idle.Town = {ammo="Aurgelmir Orb",
         head="Adhemar Bonnet +1",neck="Moonlight Nodowa",ear1="Sherida Earring",ear2="Dedition Earring",
         body="Ken. Samue +1",hands="Adhemar Wristbands +1",ring1="Niqmaddu Ring",ring2="Shneddick Ring",
-        back=gear.tp_jse_back,waist="Moonbow Belt +1",legs="Ken. Hakama +1",feet="Ken. Sune-Ate +1"}
+        back=gear.tp_jse_back,waist="Moonbow Belt +1",legs="Samnuha Tights",feet="Ken. Sune-Ate +1"}
 
 	-- Defense sets
 	sets.defense.PDT = {ammo="Staunch Tathlum +1",
@@ -221,7 +221,7 @@ function init_gear_sets()
     sets.engaged = {ammo="Aurgelmir Orb",
         head="Adhemar Bonnet +1",neck="Moonlight Nodowa",ear1="Sherida Earring",ear2="Telos Earring",
         body="Ken. Samue +1",hands="Adhemar Wristbands +1",ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
-        back=gear.tp_jse_back,waist="Moonbow Belt +1",legs="Ken. Hakama +1",feet="Ken. Sune-Ate +1"}
+        back=gear.tp_jse_back,waist="Moonbow Belt +1",legs="Samnuha Tights",feet="Ken. Sune-Ate +1"}
     sets.engaged.SomeAcc = {ammo="Aurgelmir Orb",
         head="Adhemar Bonnet +1",neck="Moonlight Nodowa",ear1="Sherida Earring",ear2="Telos Earring",
         body="Ken. Samue +1",hands="Adhemar Wristbands +1",ring1="Chirich Ring +1",ring2="Chirich Ring +1",

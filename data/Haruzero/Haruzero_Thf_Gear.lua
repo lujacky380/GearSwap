@@ -9,7 +9,7 @@ function user_job_setup()
     state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('Evisceration','EviscerationTH','Aeneas','Savage','MagicWeapons')
+	state.Weapons:options('Evisceration','Aeneas','Savage','MagicWeapons','TH')
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWMax','Parry'}
 	state.AmbushMode = M(false, 'Ambush Mode')
@@ -69,10 +69,10 @@ function init_gear_sets()
 	
 	-- Weapons sets
 	sets.weapons.Evisceration = {main="Tauret",sub="Shijo"}
-	sets.weapons.EviscerationTH = {main="Tauret",sub="Sandung"}
 	sets.weapons.Aeneas = {main="Aeneas",sub="Tauret"}
 	sets.weapons.Savage = {main="Naegling",sub="Tauret"}
-	sets.weapons.MagicWeapons = {main="Taming Sari",sub="Malevolence"}
+	sets.weapons.MagicWeapons = {main="Malevolence",sub="Malevolence"}
+	sets.weapons.TH = {main="Tauret",sub="Plun. Knife"}
 	--sets.weapons.ProcWeapons = {main="Blurred Knife +1",sub="Atoyac"}
 	--sets.weapons.Throwing = {main="Aeneas",sub="Shijo",range="Raider's Bmrng."}
 	--sets.weapons.SwordThrowing = {main="Naegling",sub="Shijo",range="Raider's Bmrng"}
@@ -111,7 +111,7 @@ function init_gear_sets()
     sets.precast.JA['Collaborator'] = {head="Raider's Bonnet +2"}
     sets.precast.JA['Accomplice'] = {head="Raider's Bonnet +2"}
     sets.precast.JA['Flee'] = {feet="Rogue's Poulaines"}
-    sets.precast.JA['Hide'] = {body="Pillager's Vest +2"}
+    sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
     sets.precast.JA['Conspirator'] = {body="Raider's Vest +2"}
     sets.precast.JA['Steal'] = {head="Pill. Bonnet +2",hands="Rogue's Armlets",legs="Pillager's Culottes +2",feet="Rogue's Poulaines"}
     sets.precast.JA['Despoil'] = {legs="Raider's Culottes +2",feet="Raider's Poulaines +2"}
@@ -288,14 +288,14 @@ function init_gear_sets()
 
     sets.idle = {ammo="Staunch Tathlum +1",
         head="Mummu Bonnet +1",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Ethereal Earring",
-        body="Mummu Jacket +1",hands="Mummu Wrists +2",ring1="Defending Ring",ring2="Shneddick Ring",
+        body="Mummu Jacket +1",hands="Malignance Gloves",ring1="Defending Ring",ring2="Shneddick Ring",
         back=gear.tp_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Mummu Gamashes +1"}
 		
     sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
 
     sets.idle.Town = {range=empty,ammo="Aurgelmir Orb",
         head="Adhemar Bonnet +1",neck="Asn. Gorget +1",ear1="Sherida Earring",ear2="Telos Earring",
-        body="Pillager's Vest +2",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Shneddick Ring",
+        body="Pillager's Vest +3",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Shneddick Ring",
         back=gear.tp_jse_back,waist="Reiki Yotai",legs="Samnuha Tights",feet="Plun. Poulaines +3"}
 
     sets.idle.Weak = set_combine(sets.idle, {})
@@ -308,18 +308,18 @@ function init_gear_sets()
 
     sets.defense.PDT = {ammo="Staunch Tathlum +1",
         head="Mummu Bonnet +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
-        body="Mummu Jacket +1",hands="Mummu Wrists +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+        body="Mummu Jacket +1",hands="Malignance Gloves",ring1="Defending Ring",ring2="Gelatinous Ring +1",
         back=gear.tp_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Mummu Gamashes +1"}
 
     sets.defense.MDT = {ammo="Staunch Tathlum +1",
         head="Mummu Bonnet +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
-        body="Mummu Jacket +1",hands="Mummu Wrists +2",ring1="Defending Ring",ring2="Moonlight Ring",
-        back="Engulfer Cape +1",waist="Flume Belt",legs="Malignance Tights",feet="Mummu Gamashes +1"}
+        body="Mummu Jacket +1",hands="Malignance Gloves",ring1="Defending Ring",ring2="Moonlight Ring",
+        back=gear.wsd_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Mummu Gamashes +1"}
 		
 	sets.defense.MEVA = {ammo="Staunch Tathlum +1",
-		head=gear.herculean_fc_head,neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-		body="Adhemar Jacket +1",hands="Malignance Gloves",ring1="Vengeful Ring",ring2="Purity Ring",
-		back="Mujin Mantle",waist="Engraved Belt",legs="Malignance Tights",feet="Malignance Boots"}
+        head="Mummu Bonnet +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+        body="Mummu Jacket +1",hands="Mummu Wrists +2",ring1="Defending Ring",ring2="Moonlight Ring",
+        back=gear.wsd_jse_back,waist="Flume Belt",legs="Malignance Tights",feet="Mummu Gamashes +1"}
 
 
     --------------------------------------
@@ -329,22 +329,22 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = {ammo="Aurgelmir Orb",
         head="Adhemar Bonnet +1",neck="Asn. Gorget +1",ear1="Sherida Earring",ear2="Telos Earring",
-        body="Pillager's Vest +2",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
+        body="Pillager's Vest +3",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
         back=gear.tp_jse_back,waist="Reiki Yotai",legs="Samnuha Tights",feet="Plun. Poulaines +3"}
 		
     sets.engaged.SomeAcc = {ammo="Yamarang",
         head="Adhemar Bonnet +1",neck="Asn. Gorget +1",ear1="Sherida Earring",ear2="Telos Earring",
-        body="Pillager's Vest +2",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
+        body="Pillager's Vest +3",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
         back=gear.tp_jse_back,waist="Reiki Yotai",legs="Pillager's Culottes +2",feet="Plun. Poulaines +3"}
     
 	sets.engaged.Acc = {ammo="Yamarang",
         head="Adhemar Bonnet +1",neck="Asn. Gorget +1",ear1="Sherida Earring",ear2="Telos Earring",
-        body="Pillager's Vest +2",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
+        body="Pillager's Vest +3",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
         back=gear.tp_jse_back,waist="Reiki Yotai",legs="Pillager's Culottes +2",feet="Plun. Poulaines +3"}
 		
 	sets.engaged.FullAcc = {ammo="Yamarang",
         head="Plunderer's Bonnet +3",neck="Asn. Gorget +1",ear1="Sherida Earring",ear2="Telos Earring",
-        body="Pillager's Vest +2",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
+        body="Pillager's Vest +3",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Chirich Ring +1",
         back=gear.tp_jse_back,waist="Reiki Yotai",legs="Pillager's Culottes +2",feet="Plun. Poulaines +3"}
 		
     sets.engaged.Crit = {ammo="Yetshila +1",
@@ -354,17 +354,17 @@ function init_gear_sets()
 
     sets.engaged.Fodder = {ammo="Aurgelmir Orb",
         head="Adhemar Bonnet +1",neck="Asn. Gorget +1",ear1="Sherida Earring",ear2="Telos Earring",
-        body="Pillager's Vest +2",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
+        body="Pillager's Vest +3",hands="Adhemar Wristbands +1",ring1="Ilabrat Ring",ring2="Epona's Ring",
         back=gear.tp_jse_back,waist="Reiki Yotai",legs="Samnuha Tights",feet="Plun. Poulaines +3"}
 
     sets.engaged.PDT = {ammo="Aurgelmir Orb",
         head="Adhemar Bonnet +1",neck="Asn. Gorget +1",ear1="Sherida Earring",ear2="Telos Earring",
-        body="Pillager's Vest +2",hands="Adhemar Wristbands +1",ring1="Moonlight Ring",ring2="Moonlight Ring",
+        body="Pillager's Vest +3",hands="Malignance Gloves",ring1="Moonlight Ring",ring2="Moonlight Ring",
         back=gear.tp_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Plun. Poulaines +3"}
 		
 	sets.engaged.MDT = {ammo="Aurgelmir Orb",
 	head="Adhemar Bonnet +1",neck="Asn. Gorget +1",ear1="Sherida Earring",ear2="Telos Earring",
-	body="Pillager's Vest +2",hands="Adhemar Wristbands +1",ring1="Moonlight Ring",ring2="Moonlight Ring",
+	body="Pillager's Vest +3",hands="Malignance Gloves",ring1="Moonlight Ring",ring2="Moonlight Ring",
 	back=gear.wsd_jse_back,waist="Reiki Yotai",legs="Malignance Tights",feet="Plun. Poulaines +3"}
 
 end

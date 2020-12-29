@@ -22,10 +22,10 @@ function user_job_setup()
 	gear.odyssean_ws_str_hands = {name="Odyssean Gauntlets", augments={'Weapon skill damage +5%','STR+6','Accuracy+3','Attack+9',}}
 	gear.odyssean_ws_vit_legs = {name="Odyssean Cuisses", augments={'Accuracy+9','Weapon skill damage +4%','VIT+13','Attack+13',}}
 	
-	gear.odyssean_fc_legs = {name="Odyssean Cuisses", augments={'Accuracy+12','"Fast Cast"+5','MND+10','Attack+11',}}
-	gear.odyssean_fc_helm = {name="Odyssean Helm", augments={'Accuracy+10','"Fast Cast"+5','STR+8',}}
-	gear.odyssean_fc_feet = {name="Odyssean Greaves", augments={'Accuracy+14','"Fast Cast"+5','VIT+5','Attack+1',}}
-	gear.odyssean_fc_body = {name="Odyss. Chestplate", augments={}}
+	gear.odyssean_fc_legs = { name="Odyssean Cuisses", augments={'"Fast Cast"+5','MND+10','Accuracy+12','Attack+11',}}
+	gear.odyssean_fc_helm = { name="Odyssean Helm", augments={'"Fast Cast"+5','STR+8','Accuracy+10',}}
+	gear.odyssean_fc_feet = { name="Odyssean Greaves", augments={'Accuracy+14','"Fast Cast"+5','VIT+5','Attack+1',}}
+	gear.odyssean_fc_body = { name="Odyss. Chestplate", augments={'Accuracy+16','"Fast Cast"+5','DEX+10','Attack+13',}}
 	
 	gear.valorous_ws_str_legs = {name="Valorous Hose", augments={'Accuracy+27','Weapon skill damage +3%','STR+12',}}
 	gear.valorous_ws_crit_feet ={ name="Valorous Greaves", augments={'Attack+28','Crit.hit rate+3','STR+13','Accuracy+8',}}
@@ -103,7 +103,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast = {ammo="Staunch Tathlum +1",
 		head=gear.odyssean_fc_helm,neck="Moonbeam Necklace",ear1="Odnowa Earring +1",ear2="Ethereal Earring",
 		body=gear.odyssean_fc_body,hands="Leyline Gloves",ring1="Defending Ring",ring2="Moonlight Ring",
-		back="Moonbeam Cape",waist="Tempus Fugit",legs=gear.odyssean_fc_legs,feet=gear.odyssean_fc_feet}
+		back="Moonbeam Cape",waist="Tempus Fugit",legs="Founder's Hose",feet=gear.odyssean_fc_feet}
 	
 	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, {})
                    
@@ -114,10 +114,10 @@ function init_gear_sets()
 						                   
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {ammo="Seething Bomblet +1",
-		head="Flam. Zucchetto +2",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Cessance Earring",
-		body="Argosy Hauberk +1",hands="Argosy Mufflers +1",ring1="Flamma Ring",ring2="Niqmaddu Ring",
-		back=gear.ws_jse_back,waist="Fotia Belt",legs="Argosy Breeches +1",feet="Flam. Gambieras +2"}
+    sets.precast.WS = {ammo="Knobkierrie", 
+		head="Agoge Mask +3", neck="War. Beads +1",ear1="Moonshade Earring", ear2="Thrud Earring", 
+		body="Pumm. Lorica +3", hands=gear.odyssean_ws_str_hands,ring1="Ifrit Ring",ring2="Niqmaddu Ring",
+		back=gear.ws_jse_back, waist="Fotia Belt", legs=gear.valorous_ws_str_legs, feet="Sulev. Leggings +2"}
 
 	sets.precast.WS.PDT = set_combine{sets.precast.WS, {}}
 	sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {})
@@ -126,7 +126,7 @@ function init_gear_sets()
 	sets.precast.WS.Fodder = set_combine(sets.precast.WS, {})
 
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.	
-    sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {--ammo="Knobkierrie", 
+    sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Knobkierrie", 
 		head="Agoge Mask +3", neck="War. Beads +1",ear1="Moonshade Earring", ear2="Thrud Earring", 
 		body="Pumm. Lorica +3", hands=gear.odyssean_ws_str_hands,ring1="Ifrit Ring",ring2="Niqmaddu Ring",
 		back=gear.ws_jse_back, waist="Fotia Belt", legs=gear.valorous_ws_str_legs, feet="Sulev. Leggings +2"})
@@ -135,7 +135,7 @@ function init_gear_sets()
     sets.precast.WS['Savage Blade'].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
     sets.precast.WS['Savage Blade'].Fodder = set_combine(sets.precast.WS.Fodder, {})
 	
-	sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {--ammo="Knobkierrie", 
+	sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {ammo="Knobkierrie", 
 		head="Agoge Mask +3", neck="War. Beads +1",ear1="Moonshade Earring", ear2="Thrud Earring", 
 		body="Pumm. Lorica +3", hands=gear.odyssean_ws_str_hands,ring1="Ifrit Ring",ring2="Niqmaddu Ring",
 		back=gear.ws_jse_back, waist="Sailfi Belt +1", legs=gear.valorous_ws_str_legs, feet="Sulev. Leggings +2"})
@@ -145,7 +145,7 @@ function init_gear_sets()
     sets.precast.WS['Impulse Drive'].Fodder = set_combine(sets.precast.WS.Fodder, {})
 	
 
-    sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {--ammo="Knobkierrie", 
+    sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {ammo="Knobkierrie", 
 		head="Agoge Mask +3", neck="War. Beads +1",ear1="Moonshade Earring", ear2="Thrud Earring", 
 		body="Pumm. Lorica +3", hands=gear.odyssean_ws_vit_hands,ring1="Gelatinous Ring +1",ring2="Niqmaddu Ring",
 		back=gear.vit_jse_back, waist="Sailfi Belt +1", legs=gear.odyssean_ws_vit_legs, feet="Sulev. Leggings +2"})
@@ -179,8 +179,8 @@ function init_gear_sets()
     sets.precast.WS['Raging Rush'].Fodder = set_combine(sets.precast.WS.Fodder, {})
 	
     sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {ammo="Yetshila +1",
-		head="Blistering Sallet +1", neck="Fotia Gorget", ear1="Moonshade Earring", ear2="Thrud Earring",
-		body="Argosy Hauberk +1",hands="Flam. Manopolas +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+		head="Blistering Sallet +1", neck="War. Beads +1", ear1="Moonshade Earring", ear2="Thrud Earring",
+		body="Hjarrandi Breast.",hands="Flam. Manopolas +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
 		back=gear.ws_jse_back, waist="Sailfi Belt +1",legs="Zoar Subligar +1", feet=gear.valorous_ws_crit_feet})
     sets.precast.WS["Ukko's Fury"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
     sets.precast.WS["Ukko's Fury"].Acc = set_combine(sets.precast.WS.Acc, {})
@@ -202,10 +202,19 @@ function init_gear_sets()
     sets.precast.WS["Full Break"].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
     sets.precast.WS["Full Break"].Fodder = set_combine(sets.precast.WS.Fodder, {})
 	
-	sets.precast.WS["Fell Cleave"] = set_combine(sets.precast.WS, {--ammo="Knobkierrie", 
+	sets.precast.WS["Fell Cleave"] = set_combine(sets.precast.WS, {ammo="Knobkierrie", 
 		head="Agoge Mask +3", neck="War. Beads +1",ear1="Moonshade Earring", ear2="Thrud Earring", 
 		body="Pumm. Lorica +3", hands=gear.odyssean_ws_str_hands,ring1="Ifrit Ring",ring2="Niqmaddu Ring",
 		back=gear.ws_jse_back, waist="Fotia Belt", legs=gear.valorous_ws_str_legs, feet="Sulev. Leggings +2"})
+	
+	sets.precast.WS["Decimation"] = set_combine(sets.precast.WS, {ammo="Seething Bomblet +1",
+		head="Flam. Zucchetto +2",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Cessance Earring",
+		body="Argosy Hauberk +1",hands="Argosy Mufflers +1",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+		back=gear.ws_jse_back,waist="Fotia Belt",legs="Argosy Breeches +1",feet="Flam. Gambieras +2"})
+    sets.precast.WS["Decimation"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
+    sets.precast.WS["Decimation"].Acc = set_combine(sets.precast.WS.Acc, {})
+    sets.precast.WS["Decimation"].FullAcc = set_combine(sets.precast.WS.FullAcc, {})
+    sets.precast.WS["Decimation"].Fodder = set_combine(sets.precast.WS.Fodder, {})
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {ear1="Lugra Earring +1",ear2="Lugra Earring",}
@@ -291,8 +300,8 @@ function init_gear_sets()
 		body="Valorous Mail",hands=gear.tp_hands,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
 		back=gear.tp_jse_back,waist="Ioskeha Belt +1",legs="Pumm. Cuisses +3",feet="Pumm. Calligae +3"}
     sets.engaged.Fodder = {ammo="Aurgelmir Orb",
-		head="Flam. Zucchetto +2",neck="War. Beads +1",ear1="Telos Earring",ear2="Dedition Earring",
-		body="Valorous Mail",hands=gear.tp_hands,ring1="Chirich Ring +1",ring2="Niqmaddu Ring",
+		head="Flam. Zucchetto +2",neck="War. Beads +1",ear1="Telos Earring",ear2="Cessance Earring",
+		body="Valorous Mail",hands=gear.tp_hands,ring1="Chirich Ring +1",ring2="Chirich Ring +1",
 		back=gear.tp_jse_back,waist="Ioskeha Belt +1",legs="Pumm. Cuisses +3",feet="Pumm. Calligae +3"}
 		
 	sets.engaged.PDT = {ammo="Staunch Tathlum +1",

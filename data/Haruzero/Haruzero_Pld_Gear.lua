@@ -10,21 +10,30 @@ function user_job_setup()
     state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal','Tank','KiteTank','PDT','MDT','Refresh','Reraise')
-	state.Weapons:options('None','DeaconAegis','SequenceAegis','SequenceBlurred')
+	state.Weapons:options('None','Malignance','Brilliance','Nixxer','NaeglingBlurred','DualWeapons')
 	
     state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP','Twilight'}
 	
 	gear.fastcast_jse_back = {name="Rudianos's Mantle",augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10',}}
 	gear.enmity_jse_back = {name="Rudianos's Mantle",augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10',}}
 	gear.SIRD_jse_back = {}
-	gear.odyssean_fc_legs = {name="Odyssean Cuisses", augments={'Accuracy+12','"Fast Cast"+5','MND+10','Attack+11',}}
-	gear.odyssean_fc_feet = {name="Odyssean Greaves", augments={'Accuracy+14','"Fast Cast"+5','VIT+5','Attack+1',}}
-	gear.enmity_jse_back = {name=""}
-	gear.fastcast_jse_back = {name=""}
-	gear.valorous_wsd_body = {name = ""}
-	gear.odyssean_wsd_hands = {name = ""}
 	
+	gear.odyssean_fc_legs = { name="Odyssean Cuisses", augments={'"Fast Cast"+5','MND+10','Accuracy+12','Attack+11',}}
+	gear.odyssean_fc_helm = { name="Odyssean Helm", augments={'"Fast Cast"+5','STR+8','Accuracy+10',}}
+	gear.odyssean_fc_feet = { name="Odyssean Greaves", augments={'Accuracy+14','"Fast Cast"+5','VIT+5','Attack+1',}}
+	gear.odyssean_fc_body = { name="Odyss. Chestplate", augments={'Accuracy+16','"Fast Cast"+5','DEX+10','Attack+13',}}
 
+	gear.valorous_wsd_body = {name = ""}
+	
+	gear.odyssean_ws_vit_hands = {name="Odyssean Gauntlets", augments={'Weapon skill damage +4%','VIT+15',}}
+	gear.odyssean_ws_str_hands = {name="Odyssean Gauntlets", augments={'Weapon skill damage +5%','STR+6','Accuracy+3','Attack+9',}}
+	gear.odyssean_ws_vit_legs = {name="Odyssean Cuisses", augments={'Accuracy+9','Weapon skill damage +4%','VIT+13','Attack+13',}}
+	
+	gear.valorous_ws_str_legs = {name="Valorous Hose", augments={'Accuracy+27','Weapon skill damage +3%','STR+12',}}
+	gear.valorous_ws_crit_feet ={ name="Valorous Greaves", augments={'Attack+28','Crit.hit rate+3','STR+13','Accuracy+8',}}
+	
+	gear.valorous_TH_hands = {name="Valorous Mitts", augments={'VIT+2','AGI+3','Treasure Hunter +1'}}
+	
 	-- ! = alt, ^ = ctrl, @ = windows key
 	-- Additional local binds
 	send_command('bind !` gs c SubJobEnmity')
@@ -134,12 +143,12 @@ function init_gear_sets()
     
     sets.precast.FC = {ammo="Impatiens",
 		head="Carmine Mask",neck="Baetyl Pendant",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
-		body="Rev. Surcoat +3",hands="Leyline Gloves",ring1="Prolix Ring",ring2="Kishar Ring",
+		body=gear.odyssean_fc_body,hands="Leyline Gloves",ring1="Prolix Ring",ring2="Kishar Ring",
 		back=gear.fastcast_jse_back,waist="Creed Baudrier",legs=gear.odyssean_fc_legs,feet=gear.odyssean_fc_feet}
 		
     sets.precast.FC.DT = {ammo="Impatiens",
         head="Souv. Schaller +1",neck="Baetyl Pendant",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
-        body="Rev. Surcoat +3",hands="Souv. Handsch. +1",ring1="Prolix Ring",ring2="Kishar Ring",
+        body=gear.odyssean_fc_body,hands="Souv. Handsch. +1",ring1="Prolix Ring",ring2="Kishar Ring",
         back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}
 		
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
@@ -222,9 +231,9 @@ function init_gear_sets()
 		back="Moonbeam Cape",waist="Flume Belt",legs="Founder's Hose",feet=gear.odyssean_fc_feet}
 		
     sets.midcast.Cure.DT = {ammo="Staunch Tathlum +1",
-        head="Souv. Schaller +1",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Nourish. Earring",
+        head="Souv. Schaller +1",neck="Moonbeam Necklace",ear1="Odnowa Earring +1",ear2="Nourish. Earring +1",
         body="Souv. Cuirass +1",hands="Souv. Handsch. +1",ring1="Defending Ring",ring2="Moonlight Ring",
-        back="Moonbeam Cape",waist="Flume Belt",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}
+        back="Moonbeam Cape",waist="Flume Belt",legs="Founder's Hose",feet=gear.odyssean_fc_feet}
 		
     sets.midcast.Reprisal = {ammo="Staunch Tathlum +1",
 		head="Souv. Schaller +1",neck="Moonbeam Necklace",ear1="Odnowa Earring +1",ear2="Knightly Earring",
@@ -242,15 +251,15 @@ function init_gear_sets()
 		back="Moonbeam Cape",waist="Creed Baudrier",legs="Founder's Hose",feet=gear.odyssean_fc_feet}
 		
 	sets.Self_Healing.DT = {ammo="Staunch Tathlum +1",
-        head="Souv. Schaller +1",neck="Loricate Torque +1",ear1="Nourish. Earring +1",ear2="Nourish. Earring",
+        head="Souv. Schaller +1",neck="Moonbeam Necklace",ear1="Nourish. Earring +1",ear2="Nourish. Earring",
         body="Souv. Cuirass +1",hands="Souv. Handsch. +1",ring1="Defending Ring",ring2="Moonlight Ring",
-        back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}
+        back="Moonbeam Cape",waist="Creed Baudrier",legs="Founder's Hose",feet=gear.odyssean_fc_feet}
 
 	sets.Cure_Received = {hands="Souv. Handsch. +1",feet="Souveran Schuhs +1"}
 	sets.Self_Refresh = {}
 
     sets.midcast['Enhancing Magic'] = {ammo="Staunch Tathlum +1",
-		head="Carmine Mask",neck="Moonbeam Necklace",ear1="Friomisi Earring",ear2="Knightly Earring",
+		head="Souv. Schaller +1",neck="Moonbeam Necklace",ear1="Friomisi Earring",ear2="Knightly Earring",
 		body="Souv. Cuirass +1",hands="Leyline Gloves",ring1="Defending Ring",ring2="Kishar Ring",
 		back="Moonbeam Cape",waist="Tempus Fugit",legs="Founder's Hose",feet=gear.odyssean_fc_feet}
 		
@@ -290,7 +299,10 @@ function init_gear_sets()
 		
     sets.idle.MDT = {}
 		
-	sets.idle.Refresh = {}
+	sets.idle.Refresh = {ammo="Staunch Tathlum +1",
+		head="Valorous Mask",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
+		body="Jumalik Mail",hands="Souv. Handsch. +1",ring1="Defending Ring",ring2="Gelatinous Ring +1",
+		back="Moonbeam Cape",waist="Flume Belt",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}
 
 	sets.idle.Tank = {}
 		
@@ -321,10 +333,11 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	
 	-- Weapons sets
-	sets.weapons.DeaconAegis = {main="Deacon Sword",sub="Aegis"}
-	sets.weapons.SequenceBlurred = {main="Sequence",sub="Blurred Shield +1"}
-	sets.weapons.SequenceAegis = {main="Sequence",sub="Aegis"}
-	sets.weapons.DualWeapons = {main="Sequence",sub="Demersal Degen +1"}
+	sets.weapons.Malignance = {main="Malignance Sword"}
+	sets.weapons.Brilliance = {main="Brilliance"}
+	sets.weapons.Nixxer = {main="Nixxer"}
+	sets.weapons.NaeglingBlurred = {main="Naegling",sub="Blurred Shield +1"}
+	sets.weapons.DualWeapons = {main="Naegling",sub="Nixxer"}
     
     sets.defense.PDT = {sub="Priwen", ammo="Staunch Tathlum +1",
 		head="Souv. Schaller +1",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
