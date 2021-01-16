@@ -51,6 +51,7 @@ function user_job_setup()
 	send_command('bind @f8 gs c toggle AutoTankMode')
 	send_command('bind @f10 gs c toggle TankAutoDefense')
 	send_command('bind ^@!` gs c cycle SkillchainMode')
+	send_command('bind !r gs c cycle weapons;gs c update')
 	
     select_default_macro_book()
     update_defense_mode()
@@ -336,8 +337,8 @@ function init_gear_sets()
 	sets.weapons.Malignance = {main="Malignance Sword"}
 	sets.weapons.Brilliance = {main="Brilliance"}
 	sets.weapons.Nixxer = {main="Nixxer"}
-	sets.weapons.NaeglingBlurred = {main="Naegling",sub="Blurred Shield +1"}
-	sets.weapons.DualWeapons = {main="Naegling",sub="Nixxer"}
+	sets.weapons.NaeglingBlurred = {main="Naegling"}
+	sets.weapons.DualWeapons = {main="Naegling"}
     
     sets.defense.PDT = {sub="Priwen", ammo="Staunch Tathlum +1",
 		head="Souv. Schaller +1",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Odnowa Earring",
@@ -415,7 +416,7 @@ function init_gear_sets()
 
     sets.engaged.Acc = {ammo="Aurgelmir Orb",
         head="Flam. Zucchetto +2",neck="Asperity Necklace",ear1="Mache Earring +1",ear2="Telos Earring",
-        body="Valorous Mail",hands="Sulev. Gauntlets +2",ring2="Chirich Ring +1",ring2="Chirich Ring +1",
+        body="Valorous Mail",hands="Sulev. Gauntlets +2",ring2="Flamma Ring",ring2="Chirich Ring +1",
         back="Kayapa Cape",waist="Windbuffet Belt +1",legs="Sulevi. Cuisses +1",feet="Flam. Gambieras +2"}
 
     -- sets.engaged.DW = {}

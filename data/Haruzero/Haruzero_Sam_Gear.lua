@@ -8,7 +8,7 @@ function user_job_setup()
 	state.MagicalDefenseMode:options('MDT','MDTReraise')
 	state.ResistDefenseMode:options('MEVA')
     state.IdleMode:options('Normal', 'Reraise')
-	state.Weapons:options('Dojikiri','ProcWeapon','Bow')
+	state.Weapons:options('ShiningOne','Dojikiri','ProcWeapon','Bow')
 
 	gear.ws_jse_back = {name="Smertrios's Mantle",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	gear.stp_jse_back = {name="Smertrios's Mantle",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10',}}
@@ -18,7 +18,7 @@ function user_job_setup()
 	send_command('bind !backspace input /ja "Third Eye" <me>')
 	send_command('bind @` gs c cycle SkillchainMode')
 	send_command('bind !@^` gs c cycle Stance')
-	send_command('bind !r gs c set skipprocweapons false;gs c weapons ProcWeapon;gs c set WeaponskillMode Proc;gs c update')
+	send_command('bind !r gs c cycle weapons;gs c update')
 	send_command('bind ^r gs c set skipprocweapons true;gs c weapons Default;gs c set WeaponskillMode Normal;gs c update')
 	send_command('bind ^q gs c weapons Bow;gs c update')
 
@@ -65,8 +65,8 @@ function init_gear_sets()
 	   
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
-    sets.precast.WS = {ammo="Potestas Bomblet",
-        head="Flam. Zucchetto +2",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Ishvara Earring",
+    sets.precast.WS = {ammo="Knobkierrie",
+        head="Flam. Zucchetto +2",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Thrud Earring",
         body="Ken. Samue +1",hands="Ken. Tekko +1",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back="Buquwik Cape",waist="Fotia Belt",legs="Hiza. Hizayoroi +2",feet="Flam. Gambieras +2"}
     sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {feet="Wakido Sune. +3"})
@@ -189,7 +189,7 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	sets.Skillchain = {}
 	
-    sets.idle.Town = {ammo="Aurgelmir Orb",
+    sets.idle.Town = {ammo="Aurgelmir Orb +1",
         head="Flam. Zucchetto +2",neck="Moonlight Nodowa",ear1="Cessance Earring", ear2="Brutal Earring",
         body="Ken. Samue +1",hands="Ken. Tekko +1",ring1="Niqmaddu Ring",ring2="Shneddick Ring",
         back="Kayapa Cape",waist="Ioskeha Belt +1",legs="Ken. Hakama +1",feet="Ken. Sune-Ate +1"}
@@ -199,7 +199,7 @@ function init_gear_sets()
         body="Ken. Samue +1",hands="Ken. Tekko +1",ring1="Defending Ring",right_ring="Shneddick Ring",
         back="Engulfer's Cape +1",waist="Flume Belt",legs="Ken. Hakama +1",feet="Ken. Sune-Ate +1"}
 
-    sets.idle.Weak = {ammo="Aurgelmir Orb",
+    sets.idle.Weak = {ammo="Aurgelmir Orb +1",
         head="Ken. Jinpachi +1",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Ken. Samue +1",hands="Ken. Tekko +1",ring1="Rajas Ring",ring2="Shneddick Ring",
         back={},waist="Ioskeha Belt +1",legs="Ken. Hakama +1",feet="Ken. Sune-Ate +1"}
@@ -240,7 +240,7 @@ function init_gear_sets()
     
     -- Normal melee group
     -- Delay 450 GK, 25 Save TP => 65 Store TP for a 5-hit (25 Store TP in gear)
-    sets.engaged = {ammo="Aurgelmir Orb",
+    sets.engaged = {ammo="Aurgelmir Orb +1",
         head="Flam. Zucchetto +2",neck="Moonlight Nodowa",ear1="Cessance Earring",ear2="Brutal Earring",
         body="Ken. Samue +1",hands="Valorous Mitts",ring1="Flamma Ring",ring2="Niqmaddu Ring",
         back="Kayapa Cape",waist="Ioskeha Belt +1",legs="Ken. Hakama +1",feet="Ken. Sune-Ate +1"}
@@ -364,6 +364,7 @@ function init_gear_sets()
 ]]--Right now Adoulin sets are the same as non-Adoulin.
 
 	-- Weapons sets
+	sets.weapons.ShiningOne = {main="Kaja Lance",sub="Utu Grip"}
 	sets.weapons.Dojikiri = {main="Dojikiri Yasutsuna",sub="Utu Grip"}
 	sets.weapons.ProcWeapon = {main="Norifusa +1",sub="Bloodrain Strap"}
 	sets.weapons.Bow = {main="Norifusa +1",sub="Utu Grip",range="Cibitshavore",ammo="Eminent Arrow"}
