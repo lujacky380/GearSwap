@@ -34,11 +34,11 @@ function user_job_setup()
 	
 	gear.valorous_TH_hands = {name="Valorous Mitts", augments={'VIT+2','AGI+3','Treasure Hunter +1'}}
 	
-	gear.tp_hands = {name="Emicho Gauntlets +1"}
-	gear.tp_earring = {name="Suppanomimi"}
+	-- gear.tp_hands = {name="Emicho Gauntlets +1"}
+	-- gear.tp_earring = {name="Suppanomimi"}
 
-	-- gear.tp_hands = {name="Sulev. Gauntlets +2"}
-	-- gear.tp_earring = {name="Cessance Earring"}
+	gear.tp_hands = {name="Sulev. Gauntlets +2"}
+	gear.tp_earring = {name="Cessance Earring"}
 	
 	-- gear.tp_earring = {name="Dedition Earring"}
 
@@ -66,7 +66,7 @@ function init_gear_sets()
 	sets.Knockback = {}
 	sets.passive.Twilight = {head="Twilight Helm",body="Twilight Mail"}
 	
-	sets.TreasureHunter = {hands="Volte Bracers", legs=gear.odyssean_TH_legs}
+	sets.TreasureHunter = {hands="Volte Bracers",waist="Chaac Belt",legs=gear.odyssean_TH_legs}
 	
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Berserk'] = {body="Pumm. Lorica +3"}
@@ -118,7 +118,7 @@ function init_gear_sets()
 	-- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {ammo="Knobkierrie", 
 		head="Agoge Mask +3", neck="War. Beads +1",ear1="Moonshade Earring", ear2="Thrud Earring", 
-		body="Pumm. Lorica +3", hands=gear.odyssean_ws_str_hands,ring1="Ifrit Ring",ring2="Niqmaddu Ring",
+		body="Pumm. Lorica +3", hands=gear.odyssean_ws_str_hands,ring1="Niqmaddu Ring",ring2="Ifrit Ring",
 		back=gear.ws_jse_back, waist="Fotia Belt", legs=gear.valorous_ws_str_legs, feet="Sulev. Leggings +2"}
 
 	sets.precast.WS.PDT = set_combine{sets.precast.WS, {}}
@@ -130,7 +130,7 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.	
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {ammo="Knobkierrie", 
 		head="Agoge Mask +3", neck="War. Beads +1",ear1="Moonshade Earring", ear2="Thrud Earring", 
-		body="Pumm. Lorica +3", hands=gear.odyssean_ws_str_hands,ring1="Ifrit Ring",ring2="Niqmaddu Ring",
+		body="Pumm. Lorica +3", hands=gear.odyssean_ws_str_hands,ring1="Niqmaddu Ring",ring2="Ifrit Ring",
 		back=gear.ws_jse_back, waist="Fotia Belt", legs=gear.valorous_ws_str_legs, feet="Sulev. Leggings +2"})
     sets.precast.WS['Savage Blade'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS.Acc, {})
@@ -139,7 +139,7 @@ function init_gear_sets()
 	
 	sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {ammo="Knobkierrie", 
 		head="Agoge Mask +3", neck="War. Beads +1",ear1="Moonshade Earring", ear2="Thrud Earring", 
-		body="Pumm. Lorica +3", hands=gear.odyssean_ws_str_hands,ring1="Ifrit Ring",ring2="Niqmaddu Ring",
+		body="Pumm. Lorica +3", hands=gear.odyssean_ws_str_hands,ring1="Niqmaddu Ring",ring2="Ifrit Ring",
 		back=gear.ws_jse_back, waist="Sailfi Belt +1", legs=gear.valorous_ws_str_legs, feet="Sulev. Leggings +2"})
     sets.precast.WS['Impulse Drive'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
     sets.precast.WS['Impulse Drive'].Acc = set_combine(sets.precast.WS.Acc, {})
@@ -149,7 +149,7 @@ function init_gear_sets()
 
     sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS, {ammo="Knobkierrie", 
 		head="Agoge Mask +3", neck="War. Beads +1",ear1="Moonshade Earring", ear2="Thrud Earring", 
-		body="Pumm. Lorica +3", hands=gear.odyssean_ws_vit_hands,ring1="Gelatinous Ring +1",ring2="Niqmaddu Ring",
+		body="Pumm. Lorica +3", hands=gear.odyssean_ws_vit_hands,ring1="Niqmaddu Ring",ring2="Gelatinous Ring +1",
 		back=gear.vit_jse_back, waist="Sailfi Belt +1", legs=gear.odyssean_ws_vit_legs, feet="Sulev. Leggings +2"})
     sets.precast.WS['Upheaval'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
     sets.precast.WS['Upheaval'].Acc = set_combine(sets.precast.WS.Acc, {})
@@ -182,7 +182,7 @@ function init_gear_sets()
 	
     sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {ammo="Yetshila +1",
 		head="Blistering Sallet +1", neck="War. Beads +1", ear1="Moonshade Earring", ear2="Thrud Earring",
-		body="Hjarrandi Breast.",hands="Flam. Manopolas +2",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+		body="Hjarrandi Breast.",hands="Flam. Manopolas +2",ring1="Niqmaddu Ring",ring2="Flamma Ring",
 		back=gear.ws_jse_back, waist="Sailfi Belt +1",legs="Zoar Subligar +1", feet=gear.valorous_ws_crit_feet})
     sets.precast.WS["Ukko's Fury"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
     sets.precast.WS["Ukko's Fury"].Acc = set_combine(sets.precast.WS.Acc, {})
@@ -206,12 +206,12 @@ function init_gear_sets()
 	
 	sets.precast.WS["Fell Cleave"] = set_combine({ammo="Knobkierrie", 
 		head="Agoge Mask +3", neck="War. Beads +1",ear1="Moonshade Earring", ear2="Thrud Earring", 
-		body="Pumm. Lorica +3", hands=gear.odyssean_ws_str_hands,ring1="Ifrit Ring",ring2="Niqmaddu Ring",
+		body="Pumm. Lorica +3", hands=gear.odyssean_ws_str_hands,ring1="Niqmaddu Ring",ring2="Ifrit Ring",
 		back=gear.ws_jse_back, waist="Fotia Belt", legs=gear.valorous_ws_str_legs, feet="Sulev. Leggings +2"},sets.TreasureHunter)
 	
 	sets.precast.WS["Decimation"] = set_combine(sets.precast.WS, {ammo="Seething Bomblet +1",
-		head="Flam. Zucchetto +2",neck="Fotia Gorget",ear1="Brutal Earring",ear2="Cessance Earring",
-		body="Argosy Hauberk +1",hands="Argosy Mufflers +1",ring1="Flamma Ring",ring2="Niqmaddu Ring",
+		head="Flam. Zucchetto +2",neck="Fotia Gorget",ear1="Schere Earring",ear2="Cessance Earring",
+		body="Argosy Hauberk +1",hands="Argosy Mufflers +1",ring1="Niqmaddu Ring",ring2="Flamma Ring",
 		back=gear.ws_jse_back,waist="Fotia Belt",legs="Argosy Breeches +1",feet="Flam. Gambieras +2"})
     sets.precast.WS["Decimation"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
     sets.precast.WS["Decimation"].Acc = set_combine(sets.precast.WS.Acc, {})
@@ -222,9 +222,9 @@ function init_gear_sets()
 	sets.MaxTP = {ear1="Lugra Earring +1",ear2="Lugra Earring",}
 	sets.AccMaxTP = {ear1="Mache Earring +1",ear2="Telos Earring"}
 	sets.AccDayMaxTPWSEars = {ear1="Mache Earring +1",ear2="Telos Earring"}
-	sets.DayMaxTPWSEars = {ear1="Thrud Earring",ear2="Brutal Earring",}
+	sets.DayMaxTPWSEars = {ear1="Thrud Earring",ear2="Schere Earring",}
 	sets.AccDayWSEars = {ear1="Mache Earring +1",ear2="Telos Earring"}
-	sets.DayWSEars = {ear1="Brutal Earring",ear2="Moonshade Earring"}
+	sets.DayWSEars = {ear1="Schere Earring",ear2="Moonshade Earring"}
 	
 	--Specialty WS set overwrites.
 	sets.AccWSMightyCharge = {}
@@ -256,7 +256,7 @@ function init_gear_sets()
 	
 	-- Defense sets
 	sets.defense.PDT = {ammo="Staunch Tathlum +1",
-		head="Hjarrandi Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+		head="Hjarrandi Helm",neck="Loricate Torque +1",ear1="Telos Earring",ear2="Ethereal Earring",
 		body="Hjarrandi Breast.",hands="Sulev. Gauntlets +2",ring1="Defending Ring",ring2="Gelatinous Ring +1",
 		back=gear.tp_jse_back,waist="Flume Belt",legs="Sulevi. Cuisses +1",feet="Sulev. Leggings +2"}
 			
@@ -268,7 +268,7 @@ function init_gear_sets()
 		-- back=gear.tp_jse_back,waist="Flume Belt",legs="Pumm. Cuisses +3",feet="Pumm. Calligae +3"}
 
 	sets.defense.MDT = {ammo="Staunch Tathlum +1",
-		head="Hjarrandi Helm",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+		head="Hjarrandi Helm",neck="Loricate Torque +1",ear1="Telos Earring",ear2="Ethereal Earring",
 		body="Sulevia's Plate. +1",hands="Sulev. Gauntlets +2",ring1="Defending Ring",ring2="Moonlight Ring",
 		back=gear.ws_jse_back,waist="Flume Belt",legs="Sulevi. Cuisses +1",feet="Sulev. Leggings +2"}
 	
@@ -286,16 +286,16 @@ function init_gear_sets()
      
     -- Engaged sets 
 	sets.engaged = {ammo="Aurgelmir Orb +1",
-		head="Hjarrandi Helm",neck="War. Beads +1",ear1="Brutal Earring",ear2=gear.tp_earring,
+		head="Flam. Zucchetto +2",neck="War. Beads +1",ear1="Schere Earring",ear2=gear.tp_earring,
 		body="Agoge Lorica +3",hands=gear.tp_hands,ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
 		back=gear.tp_jse_back,waist="Ioskeha Belt +1",legs="Pumm. Cuisses +3",feet="Pumm. Calligae +3"}
     sets.engaged.SomeAcc = {ammo="Aurgelmir Orb +1",
 		head="Flam. Zucchetto +2",neck="War. Beads +1",ear1="Telos Earring",ear2=gear.tp_earring,
-		body="Valorous Mail",hands=gear.tp_hands,ring1="Niqmaddu Ring",ring2="Moonlight Ring",
+		body="Agoge Lorica +3",hands=gear.tp_hands,ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
 		back=gear.tp_jse_back,waist="Ioskeha Belt +1",legs="Pumm. Cuisses +3",feet="Pumm. Calligae +3"}
 	sets.engaged.Acc = {ammo="Aurgelmir Orb +1",
-		head="Hjarrandi Helm",neck="War. Beads +1",ear1="Telos Earring",ear2=gear.tp_earring,
-		body="Agoge Lorica +3",hands=gear.tp_hands,ring1="Niqmaddu Ring",ring2="Moonlight Ring",
+		head="Flam. Zucchetto +2",neck="War. Beads +1",ear1="Telos Earring",ear2=gear.tp_earring,
+		body="Agoge Lorica +3",hands=gear.tp_hands,ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
 		back=gear.tp_jse_back,waist="Ioskeha Belt +1",legs="Pumm. Cuisses +3",feet="Pumm. Calligae +3"}
     sets.engaged.FullAcc = {ammo="Aurgelmir Orb +1",
 		head="Flam. Zucchetto +2",neck="War. Beads +1",ear1="Telos Earring",ear2="Mache Earring +1",
@@ -303,7 +303,7 @@ function init_gear_sets()
 		back=gear.tp_jse_back,waist="Ioskeha Belt +1",legs="Pumm. Cuisses +3",feet="Pumm. Calligae +3"}
     sets.engaged.Fodder = {ammo="Aurgelmir Orb +1",
 		head="Flam. Zucchetto +2",neck="War. Beads +1",ear1="Telos Earring",ear2="Cessance Earring",
-		body="Valorous Mail",hands=gear.tp_hands,ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
+		body="Agoge Lorica +3",hands=gear.tp_hands,ring1="Niqmaddu Ring",ring2="Chirich Ring +1",
 		back=gear.tp_jse_back,waist="Ioskeha Belt +1",legs="Pumm. Cuisses +3",feet="Pumm. Calligae +3"}
 		
 	sets.engaged.PDT = {ammo="Aurgelmir Orb +1",
@@ -330,16 +330,16 @@ function init_gear_sets()
 	sets.weapons.SwordFencer = {main="Naegling",sub="Blurred Shield +1"}
 	sets.weapons.Greatsword = {main="Montante +1",sub="Utu Grip"}
 	sets.weapons.HandToHand = {main="Karambit"}
-	sets.weapons.Polearm = {main="Kaja Lance",sub="Utu Grip"}
-	sets.weapons.ProcDagger = {main="Trainee's Needle",sub=empty} --need
+	sets.weapons.Polearm = {main="Shining One",sub="Utu Grip"}
+	sets.weapons.ProcDagger = {main="Trainee's Needle",sub=empty}
 	sets.weapons.ProcSword = {main="Excalipoor II",sub=empty}
 	sets.weapons.ProcGreatSword = {main="Claymore",sub=empty}
 	sets.weapons.ProcScythe = {main="Brass Zaghnal",sub=empty}
 	sets.weapons.ProcPolearm = {main="Harpoon",sub=empty}
-	sets.weapons.ProcGreatKatana = {main="Hardwood Katana",sub=empty} --cant get yet
+	sets.weapons.ProcGreatKatana = {main="Ark Tachi",sub=empty}
 	sets.weapons.ProcClub = {main="Kitty Rod",sub=empty}
-	sets.weapons.ProcStaff = {main="Ranine Staff",sub=empty}
-	sets.weapons.ProcKatana = {main="Trainee's Burin",sub=empty} --need
+	sets.weapons.ProcStaff = {main="Cobra Staff",sub=empty}
+	sets.weapons.ProcKatana = {main="Trainee Burin",sub=empty}
 
 end
 	

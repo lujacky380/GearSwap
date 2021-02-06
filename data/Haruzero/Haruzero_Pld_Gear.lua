@@ -433,8 +433,8 @@ function init_gear_sets()
 	-- sets.engaged.BreathTank = {}
 		
 	sets.engaged.DDTank = {ammo="Aurgelmir Orb",
-		head="Sulevia's Mask +1",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Telos Earring",
-		body="Sulevia's Plate. +1",hands="Sulev. Gauntlets +2",ring1="Defending Ring",ring2="Moonlight Ring",
+		head="Hjarrandi Helm",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Telos Earring",
+		body="Hjarrandi Breast.",hands="Sulev. Gauntlets +2",ring1="Defending Ring",ring2="Moonlight Ring",
 		back="Kayapa Cape",waist="Windbuffet Belt +1",legs="Sulev. Cuisses +1",feet="Sulev. Leggings +2"}
 		
 	-- sets.engaged.Acc.DDTank = {}

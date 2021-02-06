@@ -1,0 +1,17 @@
+sets.exported={
+    main="Shining One",
+    sub="Utu Grip",
+    ammo="Aurgelmir Orb +1",
+    head="Flam. Zucchetto +2",
+    body="Ken. Samue +1",
+    hands="Ken. Tekko +1",
+    legs="Ken. Hakama +1",
+    feet={ name="Valorous Greaves", augments={'Accuracy+5','Weapon skill damage +2%','STR+9','Attack+11',}},
+    neck="Samurai's Nodowa",
+    waist="Ioskeha Belt +1",
+    left_ear="Cessance Earring",
+    right_ear="Brutal Earring",
+    left_ring="Niqmaddu Ring",
+    right_ring="Shneddick Ring",
+    back={ name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+}
